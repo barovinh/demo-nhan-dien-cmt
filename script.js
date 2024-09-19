@@ -1,3 +1,6 @@
+let api_key = "SYe4cuLbzfvZW4iEBSlZWg51HFTwRrH2";
+// Bảo Vinh làm ơn úp đết cái api key này, sắp hết lượt dùng rồi
+
 $(document).ready(function(){
     $("#input-file").change(function(e) {
         for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
@@ -35,7 +38,7 @@ $(document).ready(function(){
             processData: false, // Prevent jQuery from processing the data
             contentType: false, // Prevent jQuery from setting the content type
             headers: {
-                'api_key': "SYe4cuLbzfvZW4iEBSlZWg51HFTwRrH2"
+                'api_key': api_key
             },
             success: function(data, status){
                 // alert("Data: " + JSON.stringify(data) + "\nStatus: " + status);
