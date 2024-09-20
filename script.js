@@ -4,21 +4,17 @@ let api_key = "SYe4cuLbzfvZW4iEBSlZWg51HFTwRrH2";
 $(document).ready(function(){
     $("#input-file").change(function(e) {
         for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
-            var file = e.originalEvent.srcElement.files[i];
+            var file = e.originalEvent.srcElement.files[i]
     
-            var img = document.createElement("img");
-            var reader = new FileReader();
+            var img = $('#uploaded-img')
+            var reader = new FileReader()
             reader.onloadend = function() {
-                 img.src = reader.result;
-                 img.width = 200;
-                 img.height = 200;
+                 img.attr('src', reader.result)
             }
             reader.readAsDataURL(file);
-            $("#input-file").after(img);
-            var label = document.createElement("p");
-            label.innerHTML = "Ảnh đã tải lên: "
-            img.before(label)
+            
         }
+        $("#uploaded-section").removeClass('d-none')
     });
 
     $('#submit').on("click", function(){
